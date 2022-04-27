@@ -7,15 +7,15 @@ import json
 def home():
     params={
     "api_key":"rJM3VmADEJHGZR2wo6gnANb9TzYVhX5c",
-    "limit":"5",
-    "q":"willsimith"
+    "limit":"10",
+    "q":"moneyheist"
     }
     qrstring=parse.urlencode(params)
-    base_url='https://api.giphy.com/v1/gifs/trending?'
+    base_url='https://api.giphy.com/v1/gifs/search?'
     req=request.urlopen(base_url+qrstring)
     resp=req.read()
     apires=json.loads(resp)
-    data=apires["data"][0]["images"]["downsized"]["url"]
+    data=apires["data"]
    
 
     return render_template('index.html',datum=data)

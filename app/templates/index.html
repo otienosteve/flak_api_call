@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block body %}
 <h1>This is the homepage</h1>
-{{ url_for('static', filename='') }}
 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, ea! Et ipsum mollitia cumque, perferendis facilis omnis quisquam ipsam ab modi? Corrupti beatae omnis eum quibusdam officiis deleniti distinctio tempora.</p>
-{% for data in datum %} {{data}} {% endfor %}{% endblock body %}
+{% for data in datum %}
+<br>
+<img src={{data[ "images"][ "downsized"][ "url"]}} alt="" srcset=""> {% endfor %} {% endblock body %}
