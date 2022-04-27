@@ -15,11 +15,8 @@ def home():
     req=request.urlopen(base_url+qrstring)
     resp=req.read()
     apires=json.loads(resp)
-    data=apires["data"]
-    data2="https://media2.giphy.com/media/rVzvUgOpJlQkS06ZMO/giphy.gif?cid=57eecaf543os4uu6ngzm1zfka75hq27sn0vnmtaxcobldw02&rid=giphy.gif&ct=g"
-    # for i in data:
-    #     if i!=" ":
-    #         data2+=i
+    data=apires["data"][0]["images"]["downsized"]["url"]
+   
 
     return render_template('index.html',datum=data)
 
